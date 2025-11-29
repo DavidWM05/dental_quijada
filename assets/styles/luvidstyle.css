@@ -1,0 +1,750 @@
+/* ========== 1. VARIABLES CSS ========== */
+:root {
+  /* Colores primarios */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-primary-light: #60a5fa;
+  
+  --color-secondary: #8b5cf6;
+  --color-secondary-dark: #7c3aed;
+  --color-secondary-light: #a78bfa;
+  
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #06b6d4;
+  
+  /* Grises */
+  --color-dark: #1f2937;
+  --color-light: #f3f4f6;
+  --color-gray-100: #f9fafb;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* Tipografía */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: "Courier New", monospace;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  /* Espaciado */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  
+  /* Bordes */
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+  --border-radius-full: 9999px;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Transiciones */
+  --transition-base: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+}
+
+/* ========== 2. RESET Y BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--color-gray-800);
+  background-color: #ffffff;
+}
+
+/* ========== 3. SISTEMA DE GRID (12 COLUMNAS) ========== */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.container-sm { max-width: 640px; }
+.container-md { max-width: 768px; }
+.container-lg { max-width: 1024px; }
+.container-xl { max-width: 1280px; }
+.container-fluid { max-width: 100%; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--spacing-4) * -0.5);
+}
+
+.col {
+  flex: 1;
+  padding: 0 calc(var(--spacing-4) * 0.5);
+}
+
+/* Columnas específicas */
+.col-1 { flex: 0 0 8.333333%; max-width: 8.333333%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-2 { flex: 0 0 16.666667%; max-width: 16.666667%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-3 { flex: 0 0 25%; max-width: 25%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-4 { flex: 0 0 33.333333%; max-width: 33.333333%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-5 { flex: 0 0 41.666667%; max-width: 41.666667%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-6 { flex: 0 0 50%; max-width: 50%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-7 { flex: 0 0 58.333333%; max-width: 58.333333%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-8 { flex: 0 0 66.666667%; max-width: 66.666667%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-9 { flex: 0 0 75%; max-width: 75%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-10 { flex: 0 0 83.333333%; max-width: 83.333333%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-11 { flex: 0 0 91.666667%; max-width: 91.666667%; padding: 0 calc(var(--spacing-4) * 0.5); }
+.col-12 { flex: 0 0 100%; max-width: 100%; padding: 0 calc(var(--spacing-4) * 0.5); }
+
+/* ========== 12. UTILIDADES DE TEXTO ========== */
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+.text-primary { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-secondary) !important; }
+.text-success { color: var(--color-success) !important; }
+.text-danger { color: var(--color-danger) !important; }
+.text-warning { color: var(--color-warning) !important; }
+.text-muted { color: var(--color-gray-500) !important; }
+
+.font-weight-light { font-weight: 300 !important; }
+.font-weight-normal { font-weight: 400 !important; }
+.font-weight-bold { font-weight: 700 !important; }
+
+.text-uppercase { text-transform: uppercase !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+/* ========== 13. UTILIDADES DE DISPLAY ========== */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+
+/* Flexbox */
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+
+.justify-content-start { justify-content: flex-start !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.justify-content-between { justify-content: space-between !important; }
+
+.align-items-start { align-items: flex-start !important; }
+.align-items-center { align-items: center !important; }
+.align-items-end { align-items: flex-end !important; }
+
+.gap-1 { gap: var(--spacing-1) !important; }
+.gap-2 { gap: var(--spacing-2) !important; }
+.gap-3 { gap: var(--spacing-3) !important; }
+.gap-4 { gap: var(--spacing-4) !important; }
+
+/* ========== 14. UTILIDADES ADICIONALES ========== */
+.w-25 { width: 25% !important; }
+.w-50 { width: 50% !important; }
+.w-75 { width: 75% !important; }
+.w-100 { width: 100% !important; }
+
+.h-100 { height: 100% !important; }
+
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow { box-shadow: var(--shadow) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+
+.rounded { border-radius: var(--border-radius) !important; }
+.rounded-lg { border-radius: var(--border-radius-lg) !important; }
+.rounded-full { border-radius: var(--border-radius-full) !important; }
+
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-light { background-color: var(--color-light) !important; }
+.bg-dark { background-color: var(--color-dark) !important; color: white; }
+.bg-white { background-color: white !important; }
+
+/* ========== 4. BOTONES ========== */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition-base);
+  line-height: 1.5;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.btn-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.btn-warning {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Tamaños de botones */
+.btn-sm {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-lg);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 1024px) {
+  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+}
+
+@media (min-width: 768px) {
+  .col-md-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+  .col-md-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+  .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-md-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (max-width: 767px) {
+  .col-sd-12 { flex: 0 0 100%; max-width: 100%; padding-left: 25%; }
+}
+
+/* ========== 11. UTILIDADES DE ESPACIADO ========== */
+/* Margin */
+.m-0 { margin: 0 !important; }
+.m-1 { margin: var(--spacing-1) !important; }
+.m-2 { margin: var(--spacing-2) !important; }
+.m-3 { margin: var(--spacing-3) !important; }
+.m-4 { margin: var(--spacing-4) !important; }
+.m-5 { margin: var(--spacing-5) !important; }
+.m-6 { margin: var(--spacing-6) !important; }
+.m-8 { margin: var(--spacing-8) !important; }
+.m-auto { margin: auto !important; }
+
+/* Margin específico */
+.mt-1 { margin-top: var(--spacing-1) !important; }
+.mt-2 { margin-top: var(--spacing-2) !important; }
+.mt-3 { margin-top: var(--spacing-3) !important; }
+.mt-4 { margin-top: var(--spacing-4) !important; }
+.mt-5 { margin-top: var(--spacing-5) !important; }
+.mt-6 { margin-top: var(--spacing-6) !important; }
+
+.mb-1 { margin-bottom: var(--spacing-1) !important; }
+.mb-2 { margin-bottom: var(--spacing-2) !important; }
+.mb-3 { margin-bottom: var(--spacing-3) !important; }
+.mb-4 { margin-bottom: var(--spacing-4) !important; }
+.mb-5 { margin-bottom: var(--spacing-5) !important; }
+.mb-6 { margin-bottom: var(--spacing-6) !important; }
+
+.ml-1 { margin-left: var(--spacing-1) !important; }
+.ml-2 { margin-left: var(--spacing-2) !important; }
+.ml-3 { margin-left: var(--spacing-3) !important; }
+.ml-4 { margin-left: var(--spacing-4) !important; }
+.ml-auto { margin-left: auto !important; }
+
+.mr-1 { margin-right: var(--spacing-1) !important; }
+.mr-2 { margin-right: var(--spacing-2) !important; }
+.mr-3 { margin-right: var(--spacing-3) !important; }
+.mr-4 { margin-right: var(--spacing-4) !important; }
+.mr-auto { margin-right: auto !important; }
+
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+/* Padding */
+.p-0 { padding: 0 !important; }
+.p-1 { padding: var(--spacing-1) !important; }
+.p-2 { padding: var(--spacing-2) !important; }
+.p-3 { padding: var(--spacing-3) !important; }
+.p-4 { padding: var(--spacing-4) !important; }
+.p-5 { padding: var(--spacing-5) !important; }
+.p-6 { padding: var(--spacing-6) !important; }
+.p-8 { padding: var(--spacing-8) !important; }
+
+.pt-1 { padding-top: var(--spacing-1) !important; }
+.pt-2 { padding-top: var(--spacing-2) !important; }
+.pt-3 { padding-top: var(--spacing-3) !important; }
+.pt-4 { padding-top: var(--spacing-4) !important; }
+
+.pb-1 { padding-bottom: var(--spacing-1) !important; }
+.pb-2 { padding-bottom: var(--spacing-2) !important; }
+.pb-3 { padding-bottom: var(--spacing-3) !important; }
+.pb-4 { padding-bottom: var(--spacing-4) !important; }
+
+.px-2 { padding-left: var(--spacing-2) !important; padding-right: var(--spacing-2) !important; }
+.px-4 { padding-left: var(--spacing-4) !important; padding-right: var(--spacing-4) !important; }
+.px-6 { padding-left: var(--spacing-6) !important; padding-right: var(--spacing-6) !important; }
+
+.py-2 { padding-top: var(--spacing-2) !important; padding-bottom: var(--spacing-2) !important; }
+.py-4 { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
+.py-6 { padding-top: var(--spacing-6) !important; padding-bottom: var(--spacing-6) !important; }
+
+/* navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-1);
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 70px;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.active_cita {
+  background: #2c89e7;
+  color: white !important;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========== 8. CARRUSEL ========== */
+.carousel-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none;
+  position: relative;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: var(--spacing-4);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: var(--transition-fast);
+  z-index: 10;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control-prev {
+  left: var(--spacing-4);
+}
+
+.carousel-control-next {
+  right: var(--spacing-4);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-2);
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.carousel-indicator.active {
+  background-color: white;
+}
+
+/* ========== 6. TARJETAS ========== */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: var(--spacing-6);
+}
+
+.card-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-3);
+  color: var(--color-gray-900);
+}
+
+.card-text {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-4);
+}
+
+.card-footer {
+  padding: var(--spacing-4) var(--spacing-6);
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+
+/* ========= HERO GENERAL ========== */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  padding: 80px 40px;
+  max-width: 1300px;
+  margin: auto;
+
+  background: linear-gradient(135deg, #e8f5ff 0%, #ffffff 100%);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #1e86d9;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* -------- BOTÓN -------- */
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 15px;
+
+  background: #1e86d9;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.hero-btn:hover {
+  background: #0b6ebc;
+}
+
+/* ========= IMAGEN ========== */
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 16px;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.15);
+}
+
+
+/*===============| 📱 RESPONSIVE DESIGN |=============== */
+@media (max-width: 768px) {
+
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+
+  .navbar-nav {
+    display: none; /* escondido por defecto */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-logo img {
+    margin-right: 100px;
+  }
+
+  /* Cuando se active el menú */
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    max-width: 500px;
+  }
+}
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+  .navbar-nav {
+    gap: 15px;
+  }
+
+  .navbar-logo img {
+    height: 50px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+}
+
+/*
+
+SERVICIOS BASICOS ----
+Limpieza dental.
+Resina (remoción del tejido dañado (caries), y restaurarlo con resina)
+Extracciones 
+Radiografías 
+Prevención (técnica de cepillado)
+
+ESTETICA DENTAL
+Blanqueamiento dental 
+Carillas dentales (láminas delgadas de resina o porcelana, colocadas sobre los dientes para corregir  imperfecciones  estéticas, como manchas e irregularidades. Pueden ser directas e indirectas)
+
+ESPECIALIDAD ----
+Brackets (consiste en la alineación de los dientes, corrigiendo problemas de maloclusión, mejorando la función y estética)
+Alineadores (opción  de ortodoncia más discreta, que utiliza acetatos transparentes  para enderezar los dientes)
+Ortopedia (aparatos fijos y/o removibles que guían el crecimiento óseo. Se inicia a los 8 años, o en algunos casos, se puede iniciar desde los 5 años, dependiendo la gravedad del problema)
+
+CIRUGIA ORAL
+Cirugías de terceros molares (muelas del juicio)
+Gingivectomia (corrección de la estética de las encías)
+Alargamiento de corona
+
+REHABILITACIÓN ----
+Endodoncia 
+Prótesis fija
+Prótesis removible 
+Coronas 
+Incrustaciones 
+Postes
+Guardas oclusales
+
+ODONTOPEDIATRIA
+Limpieza 
+Aplicación de flúor
+Selladores (tratamiento preventivo para evitar la aparición de caries en el futuro)
+Pulpotomia y Pulpectomia (remoción de una parte o la totalidad del tejido pulpar, dañado por caries)
+Coronas acero cromo
+Coronas ceromero
+Extracciones
+
+*/

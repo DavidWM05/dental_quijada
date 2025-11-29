@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pagina web profesional para servicios dentales.">
+  <meta name="author" content="Luvid Dev Code">
+  <meta name="keywords" content="Dentista, odontologia, cirujano destista, ortodoncia">
+  <title>Dental Quijada</title>
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="assets/styles/luvidstyle.css">
+</head>
+<body>
+  <!-- NAVEGACIÓN -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <img src="assets/images/dental_quijada_vf_soi.png" alt="Logo Dental Quijada">
+      </div>
+
+      <button class="navbar-toggle" id="navbar-toggle">
+        ☰
+      </button>
+
+      <ul class="navbar-nav" id="navbar-menu">
+        <li><a href="#" class="nav-link active">Inicio</a></li>
+        <li><a href="#" class="nav-link">Tratamientos</a></li>
+        <li><a href="#" class="nav-link">Promociones</a></li>
+        <li><a href="#" class="nav-link">Contacto</a></li>
+        <li><a href="#" class="nav-link active_cita">Agendar Cita</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SECCION HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h3 class="hero-subtitle">Bienvenido a Dental Quijada</h3>
+      <h1 class="hero-title">Diseñamos Sonrisas <br/> Alineamos Futuros</h1>
+
+      <p class="hero-text">
+        Somos una clínica de odontología integral ubicada en Cuautitlan, Estado de México, 
+        especializada en tratamientos de alta calidad para transformar tu sonrisa.
+      </p>
+
+      <p class="hero-text">
+        Ofrecemos soluciones en alineadores, diseño de sonrisa, blanqueamiento
+        profesional, y tratamientos especializados para cada paciente.
+      </p>
+
+      <a href="#tratamientos" class="hero-btn">Conoce nuestros tratamientos</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="assets/images/hero_img.png" alt="Consultorio dental moderno">
+    </div>
+  </section>
+
+  <!-- CARRUSEL -->
+  <div class="carousel-container mb-6 mt-6">
+    <div class="carousel" id="mainCarousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/images/carrusel_limpiezadental.webp" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/carrusel_ortodoncia.webp" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/carousel_protesis.webp" alt="Slide 3">
+        </div>
+      </div>
+      <button class="carousel-control carousel-control-prev" onclick="prevSlide()">‹</button>
+      <button class="carousel-control carousel-control-next" onclick="nextSlide()">›</button>
+      <div class="carousel-indicators">
+        <button class="carousel-indicator active" onclick="goToSlide(0)"></button>
+        <button class="carousel-indicator" onclick="goToSlide(1)"></button>
+        <button class="carousel-indicator" onclick="goToSlide(2)"></button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Cards - Servicios -->
+  <div class="container mb-6">
+    <h2 class="text-center mb-5">Nuestros Servicios</h2>
+    <div class="row">
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title">Especialidad</h3>
+            <p class="card-text">
+              <ul>
+                <li>Brackets</li>
+                <li>Alineadores</li>
+                <li>Ortopedia</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title">Servicios Basicos</h3>
+            <p class="card-text">
+              <ul>
+                <div class="row">
+                  <div class="col-6">
+                    <li>Limpieza Dental</li>
+                    <li>Resina</li>
+                    <li>Extracciones</li>
+                  </div>
+                  <div class="col-6">
+                    <li>Radiografias</li>
+                    <li>Prevencion</li>
+                  </div>
+                </div>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title">Rehabilitación</h3>
+            <p class="card-text">
+              <ul>
+                <div class="row">
+                  <div class="col-6">
+                    <li>Endodoncia</li>
+                    <li>Prótesis Fija</li>
+                    <li>Protesis Removible</li>
+                  </div>
+                  <div class="col-6">
+                    <li>Coronas</li>
+                    <li>Incrustaciones</li>
+                    <li>Guardas Oclusales</li>
+                  </div>
+                </div>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title">Rehabilitación</h3>
+            <p class="card-text">
+              <ul>
+                <div class="row">
+                  <div class="col-6">
+                    <li>Endodoncia</li>
+                    <li>Prótesis Fija</li>
+                    <li>Protesis Removible</li>
+                  </div>
+                  <div class="col-6">
+                    <li>Coronas</li>
+                    <li>Incrustaciones</li>
+                    <li>Guardas Oclusales</li>
+                  </div>
+                </div>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3">Ver Todos Servicios</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark py-6 mt-8">
+      <div class="container">
+          <div class="row">
+              <div class="col-5 col-md-4 col-sd-12 mb-4">
+                  <h3 class="text-white mb-3">Dental Quijada</h3>
+                  <p class="text-muted">Creando sonrisas desde 2017.</p>
+              </div>
+              <div class="col-3 col-md-3 col-sd-12 mb-4">
+                  <h4 class="text-white mb-3">Enlaces</h4>
+                  <ul style="list-style: none; padding: 0;">
+                      <li><a href="#" class="text-muted" style="text-decoration: none;">Acerca de</a></li>
+                      <li><a href="#" class="text-muted" style="text-decoration: none;">Servicios</a></li>
+                      <li><a href="#" class="text-muted" style="text-decoration: none;">Contacto</a></li>
+                  </ul>
+              </div>
+              <div class="col-4 col-md-3 col-sd-12 mb-4">
+                  <h4 class="text-white mb-3">Síguenos</h4>
+                  <div class="d-flex gap-3">
+                      <button class="btn btn-primary btn-sm">Facebook</button>
+                      <button class="btn btn-danger btn-sm">Instagram</button>
+                  </div>
+              </div>
+          </div>
+          <div class="text-center text-muted mt-4">
+              <small>© 2025 Dental Quijada. Todos los derechos reservados.</small>
+          </div>
+      </div>
+  </footer>
+
+  <script src="assets/functions/mainfx.js"></script>
+</body>
+</html>
