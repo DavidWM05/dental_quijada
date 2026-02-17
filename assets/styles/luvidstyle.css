@@ -1,77 +1,7 @@
-/* ========== 1. VARIABLES CSS ========== */
-:root {
-  /* Colores primarios */
-  --color-primary: #3b82f6;
-  --color-primary-dark: #2563eb;
-  --color-primary-light: #60a5fa;
-  
-  --color-secondary: #8b5cf6;
-  --color-secondary-dark: #7c3aed;
-  --color-secondary-light: #a78bfa;
-  
-  --color-success: #10b981;
-  --color-danger: #ef4444;
-  --color-warning: #f59e0b;
-  --color-info: #06b6d4;
-  
-  /* Grises */
-  --color-dark: #1f2937;
-  --color-light: #f3f4f6;
-  --color-gray-100: #f9fafb;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  
-  /* Tipografía */
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-family-monospace: "Courier New", monospace;
-  
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
-  
-  /* Espaciado */
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-8: 2rem;
-  --spacing-10: 2.5rem;
-  --spacing-12: 3rem;
-  --spacing-16: 4rem;
-  
-  /* Bordes */
-  --border-radius-sm: 0.25rem;
-  --border-radius: 0.375rem;
-  --border-radius-lg: 0.5rem;
-  --border-radius-xl: 0.75rem;
-  --border-radius-full: 9999px;
-  
-  /* Sombras */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
-  /* Transiciones */
-  --transition-base: all 0.3s ease;
-  --transition-fast: all 0.15s ease;
-}
+@import url('variables.css');
+@import url('custom.css');
 
-/* ========== 2. RESET Y BASE ========== */
+/* ========== 1. RESET Y BASE ========== */
 * {
   margin: 0;
   padding: 0;
@@ -86,11 +16,12 @@ body {
   background-color: #ffffff;
 }
 
-/* ========== 3. SISTEMA DE GRID (12 COLUMNAS) ========== */
+/* ========== 2. SISTEMA DE GRID (12 COLUMNAS) ========== */
 .container {
   width: 90%;
   margin: 0 auto;
   padding: 0 var(--spacing-4);
+  max-width: 1300px;
 }
 
 .container-sm { max-width: 640px; }
@@ -190,6 +121,7 @@ body {
 
 .bg-primary { background-color: var(--color-primary) !important; }
 .bg-light { background-color: var(--color-light) !important; }
+.bg-secondary-dark { background-color: var(--color-secondary-dark) !important; color: white; }
 .bg-dark { background-color: var(--color-dark) !important; color: white; }
 .bg-white { background-color: white !important; }
 
@@ -298,7 +230,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  .col-sd-12 { flex: 0 0 100%; max-width: 100%; padding-left: 25%; }
+  .col-sd-12 { flex: 0 0 100%; max-width: 100%; padding: 0 calc(var(--spacing-4) * 0.5); }
 }
 
 /* ========== 11. UTILIDADES DE ESPACIADO ========== */
@@ -424,9 +356,10 @@ body {
 
 /* ========== 8. CARRUSEL ========== */
 .carousel-container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 var(--spacing-4);
+  /*padding: 0 var(--spacing-4);*/
+  max-width: 1300px;
 }
 
 .carousel {
@@ -551,6 +484,236 @@ body {
   border-top: 1px solid var(--color-gray-200);
 }
 
+/* ========== MODAL MEJORADO ========== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-container {
+  background: white;
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  padding: var(--spacing-8) var(--spacing-6);
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  position: relative;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-2) 0;
+  color: white;
+}
+
+.modal-subtitle {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.modal-form {
+  padding: var(--spacing-8);
+}
+
+/* Form Groups */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-2);
+  letter-spacing: 0.3px;
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background-color: var(--color-gray-50);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-text-fill-color: var(--color-gray-900);
+}
+
+.form-input::placeholder {
+  color: var(--color-gray-400);
+}
+
+select.form-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  background-size: 1.5em 1.5em;
+  padding-right: var(--spacing-10);
+  color: var(--color-gray-900);
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+  min-height: 80px;
+}
+
+.form-error {
+  display: block;
+  color: var(--color-danger);
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-1);
+  min-height: 18px;
+}
+
+/* Acciones del formulario */
+.form-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Responsivo Modal */
+@media (max-width: 640px) {
+  .modal-container {
+    max-width: 100%;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    margin-top: auto;
+    max-height: 100vh;
+  }
+
+  .modal-header {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .modal-form {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .modal-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+
+  .form-actions {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ========= HERO GENERAL ========== */
 
@@ -559,12 +722,11 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-
   padding: 80px 40px;
   max-width: 1300px;
   margin: auto;
-
   background: linear-gradient(135deg, #e8f5ff 0%, #ffffff 100%);
+  border-radius: 8px;
 }
 
 .hero-content {
@@ -705,46 +867,3 @@ body {
     max-width: 100%;
   }
 }
-
-/*
-
-SERVICIOS BASICOS ----
-Limpieza dental.
-Resina (remoción del tejido dañado (caries), y restaurarlo con resina)
-Extracciones 
-Radiografías 
-Prevención (técnica de cepillado)
-
-ESTETICA DENTAL
-Blanqueamiento dental 
-Carillas dentales (láminas delgadas de resina o porcelana, colocadas sobre los dientes para corregir  imperfecciones  estéticas, como manchas e irregularidades. Pueden ser directas e indirectas)
-
-ESPECIALIDAD ----
-Brackets (consiste en la alineación de los dientes, corrigiendo problemas de maloclusión, mejorando la función y estética)
-Alineadores (opción  de ortodoncia más discreta, que utiliza acetatos transparentes  para enderezar los dientes)
-Ortopedia (aparatos fijos y/o removibles que guían el crecimiento óseo. Se inicia a los 8 años, o en algunos casos, se puede iniciar desde los 5 años, dependiendo la gravedad del problema)
-
-CIRUGIA ORAL
-Cirugías de terceros molares (muelas del juicio)
-Gingivectomia (corrección de la estética de las encías)
-Alargamiento de corona
-
-REHABILITACIÓN ----
-Endodoncia 
-Prótesis fija
-Prótesis removible 
-Coronas 
-Incrustaciones 
-Postes
-Guardas oclusales
-
-ODONTOPEDIATRIA
-Limpieza 
-Aplicación de flúor
-Selladores (tratamiento preventivo para evitar la aparición de caries en el futuro)
-Pulpotomia y Pulpectomia (remoción de una parte o la totalidad del tejido pulpar, dañado por caries)
-Coronas acero cromo
-Coronas ceromero
-Extracciones
-
-*/

@@ -7,6 +7,7 @@
   <meta name="author" content="Luvid Dev Code">
   <meta name="keywords" content="Dentista, odontologia, cirujano destista, ortodoncia">
   <title>Dental Quijada</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 
   <!-- Estilos CSS -->
   <link rel="stylesheet" href="assets/styles/luvidstyle.css">
@@ -15,7 +16,7 @@
   <!-- NAVEGACIÓN -->
   <nav class="navbar">
     <div class="navbar-container">
-      <div class="navbar-logo">
+      <div class="navbar-logo mr-3">
         <img src="assets/images/dental_quijada_vf_soi.png" alt="Logo Dental Quijada">
       </div>
 
@@ -25,37 +26,13 @@
 
       <ul class="navbar-nav" id="navbar-menu">
         <li><a href="#" class="nav-link active">Inicio</a></li>
-        <li><a href="#" class="nav-link">Tratamientos</a></li>
+        <li><a href="#tratamientos" class="nav-link">Tratamientos</a></li>
         <li><a href="#" class="nav-link">Promociones</a></li>
-        <li><a href="#" class="nav-link">Contacto</a></li>
-        <li><a href="#" class="nav-link active_cita">Agendar Cita</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li><button class="btn btn-secondary" id="abrirModal">Agendar Cita</button></li>
       </ul>
     </div>
   </nav>
-
-  <!-- SECCION HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h3 class="hero-subtitle">Bienvenido a Dental Quijada</h3>
-      <h1 class="hero-title">Diseñamos Sonrisas <br/> Alineamos Futuros</h1>
-
-      <p class="hero-text">
-        Somos una clínica de odontología integral ubicada en Cuautitlan, Estado de México, 
-        especializada en tratamientos de alta calidad para transformar tu sonrisa.
-      </p>
-
-      <p class="hero-text">
-        Ofrecemos soluciones en alineadores, diseño de sonrisa, blanqueamiento
-        profesional, y tratamientos especializados para cada paciente.
-      </p>
-
-      <a href="#tratamientos" class="hero-btn">Conoce nuestros tratamientos</a>
-    </div>
-
-    <div class="hero-image">
-      <img src="assets/images/hero_img.png" alt="Consultorio dental moderno">
-    </div>
-  </section>
 
   <!-- CARRUSEL -->
   <div class="carousel-container mb-6 mt-6">
@@ -80,18 +57,75 @@
       </div>
     </div>
   </div>
+
+  <!-- SECCION BIENVENIDA -->
+  <section class="hero mt-3">
+    <div class="hero-content">
+      <h3 class="hero-subtitle">Bienvenido a Dental Quijada</h3>
+      <h1 class="hero-title">Diseñamos Sonrisas <br/> Alineamos Futuros</h1>
+
+      <p class="hero-text">
+        Somos una clínica de odontología integral ubicada en Cuautitlan, Estado de México, 
+        especializada en tratamientos de alta calidad para transformar tu sonrisa.
+      </p>
+
+      <p class="hero-text">
+        Ofrecemos soluciones en alineadores, diseño de sonrisa, blanqueamiento
+        profesional, y tratamientos especializados para cada paciente.
+      </p>
+
+      <a href="#tratamientos" class="hero-btn">Conoce nuestros tratamientos</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="assets/images/hero_img.png" alt="Consultorio dental moderno">
+    </div>
+  </section>
+
+  <!-- SECCION Auto Escribe -->
+  <div class="container-auto mt-3 mb-3 pt-3 pb-3">
+    <div class="glass">
+      <h2 class="text-center mb-5">¿Por qué elegir Dental Quijada?</h2>
+      <div id="typewriter" class="typewriter"></div> 
+    </div>
+  </div>
   
   <!-- Cards - Servicios -->
-  <div class="container mb-6">
+  <div class="container mb-6" id="tratamientos">
     <h2 class="text-center mb-5">Nuestros Servicios</h2>
+    
     <div class="row">
+      <!-- Servicios Basicos -->
       <div class="col-12 col-md-4 mb-4">
         <div class="card">
-          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <img src="assets/images/radiografias_1.webp" alt="Producto 1" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title">Servicios Basicos</h3>
+            <p class="card-text">
+              <ul class="custom-list">
+                <div class="row">
+                  <div class="col-6 col-md-12 col-sd-12">
+                    <li>Radiografias</li>
+                    <li>Resina</li>
+                    <li>Prevencion</li>
+                  </div>
+                  <div class="col-6 col-md-12 col-sd-12">
+                    <li>Extracciones</li>
+                  </div>
+                </div>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Especialidad -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <img src="assets/images/ortodoncia_1.webp" alt="Producto 1" class="card-img-top">
           <div class="card-body">
             <h3 class="card-title">Especialidad</h3>
             <p class="card-text">
-              <ul>
+              <ul class="custom-list">
                 <li>Brackets</li>
                 <li>Alineadores</li>
                 <li>Ortopedia</li>
@@ -100,22 +134,24 @@
           </div>
         </div>
       </div>
+      <!-- Odontopediatria -->
       <div class="col-12 col-md-4 mb-4">
         <div class="card">
-          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <img src="assets/images/fluor_1.webp" alt="Producto 1" class="card-img-top">
           <div class="card-body">
-            <h3 class="card-title">Servicios Basicos</h3>
+            <h3 class="card-title">Odontopediatria</h3>
             <p class="card-text">
-              <ul>
+              <ul class="custom-list">
                 <div class="row">
-                  <div class="col-6">
-                    <li>Limpieza Dental</li>
-                    <li>Resina</li>
-                    <li>Extracciones</li>
+                  <div class="col-6 col-md-12 col-sd-12">
+                    <li>Aplicación de flúor</li>
+                    <li>Selladores</li>
+                    <li>Pulpotomia</li>
                   </div>
-                  <div class="col-6">
-                    <li>Radiografias</li>
-                    <li>Prevencion</li>
+                  <div class="col-6 col-md-12 col-sd-12">
+                    <li>Pulpectomia</li>
+                    <li>Cor. acero cromo</li>
+                    <li>Cor. ceromero</li>
                   </div>
                 </div>
               </ul>
@@ -123,20 +159,21 @@
           </div>
         </div>
       </div>
+      <!-- Rehabilitacion -->
       <div class="col-12 col-md-4 mb-4">
         <div class="card">
-          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <img src="assets/images/guarda_1.webp" alt="Producto 1" class="card-img-top">
           <div class="card-body">
             <h3 class="card-title">Rehabilitación</h3>
             <p class="card-text">
-              <ul>
+              <ul class="custom-list">
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-6 col-md-12 col-sd-12">
                     <li>Endodoncia</li>
                     <li>Prótesis Fija</li>
                     <li>Protesis Removible</li>
                   </div>
-                  <div class="col-6">
+                  <div class="col-6 col-md-12 col-sd-12">
                     <li>Coronas</li>
                     <li>Incrustaciones</li>
                     <li>Guardas Oclusales</li>
@@ -147,64 +184,407 @@
           </div>
         </div>
       </div>
+      <!-- Cirugia Oral -->
       <div class="col-12 col-md-4 mb-4">
         <div class="card">
-          <img src="https://www.coindental.mx/wp-content/uploads/2020/11/Imagen_Web_Ortodoncia_1500x750_01.jpg" alt="Producto 1" class="card-img-top">
+          <img src="assets/images/molares_1.webp" alt="Producto 1" class="card-img-top">
           <div class="card-body">
-            <h3 class="card-title">Rehabilitación</h3>
+            <h3 class="card-title">Cirugia Oral</h3>
             <p class="card-text">
-              <ul>
-                <div class="row">
-                  <div class="col-6">
-                    <li>Endodoncia</li>
-                    <li>Prótesis Fija</li>
-                    <li>Protesis Removible</li>
-                  </div>
-                  <div class="col-6">
-                    <li>Coronas</li>
-                    <li>Incrustaciones</li>
-                    <li>Guardas Oclusales</li>
-                  </div>
-                </div>
+              <ul class="custom-list">
+                <li>Terceros molares</li>
+                <li>Gingivectomia</li>
+                <li>Alargamiento de corona</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Estetica Dental -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <img src="assets/images/estetica_1.webp" alt="Producto 1" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title">Estetica Dental</h3>
+            <p class="card-text">
+              <ul class="custom-list">
+                <li>Limpieza Dental</li>
+                <li>Blanqueamiento dental</li>
+                <li>Carillas dentales</li>
               </ul>
             </p>
           </div>
         </div>
       </div>
     </div>
-    <button class="btn btn-secondary mt-3">Ver Todos Servicios</button>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-dark py-6 mt-8">
-      <div class="container">
-          <div class="row">
-              <div class="col-5 col-md-4 col-sd-12 mb-4">
-                  <h3 class="text-white mb-3">Dental Quijada</h3>
-                  <p class="text-muted">Creando sonrisas desde 2017.</p>
+  <!-- PROMOCIONES -->
+  <section class="section-promociones mb-6" id="promociones">
+    <div class="container">
+      <h2 class="text-center mb-6" style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--color-gray-900);">Nuestras Promociones</h2>
+      
+      <!-- Promociones Permanentes -->
+      <div class="promo-category mb-8">
+        <h3 class="promo-category-title">Promociones Permanentes</h3>
+        <div class="row">
+          <!-- Promo 1: Primera Consulta -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card">
+              <div class="promo-icon">🆓</div>
+              <h4 class="promo-title">Primera Consulta Gratuita</h4>
+              <p class="promo-desc">Evaluación inicial sin costo para nuevos pacientes. Conoce nuestros servicios sin compromiso.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-new">Nuevos Pacientes</span>
               </div>
-              <div class="col-3 col-md-3 col-sd-12 mb-4">
-                  <h4 class="text-white mb-3">Enlaces</h4>
-                  <ul style="list-style: none; padding: 0;">
-                      <li><a href="#" class="text-muted" style="text-decoration: none;">Acerca de</a></li>
-                      <li><a href="#" class="text-muted" style="text-decoration: none;">Servicios</a></li>
-                      <li><a href="#" class="text-muted" style="text-decoration: none;">Contacto</a></li>
-                  </ul>
-              </div>
-              <div class="col-4 col-md-3 col-sd-12 mb-4">
-                  <h4 class="text-white mb-3">Síguenos</h4>
-                  <div class="d-flex gap-3">
-                      <button class="btn btn-primary btn-sm">Facebook</button>
-                      <button class="btn btn-danger btn-sm">Instagram</button>
-                  </div>
-              </div>
+              <button class="promo-btn" onclick="showPromoDetail('consulta')">Aprovechar</button>
+            </div>
           </div>
-          <div class="text-center text-muted mt-4">
-              <small>© 2025 Dental Quijada. Todos los derechos reservados.</small>
+
+          <!-- Promo 2: Limpieza Dental -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card">
+              <div class="promo-icon">✨</div>
+              <h4 class="promo-title">Descuento en Limpieza Dental</h4>
+              <p class="promo-desc">2x1 en limpiezas o precio especial en la primera visita. Mantén tu sonrisa radiante.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-discount">Descuento Especial</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('limpieza')">Agendar</button>
+            </div>
           </div>
+
+          <!-- Promo 3: Blanqueamiento -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card">
+              <div class="promo-icon">⚪</div>
+              <h4 class="promo-title">Blanqueamiento Dental</h4>
+              <p class="promo-desc">Paquete de blanqueamiento con descuento del 20–30%. Sonrisa más blanca y brillante.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-hot">-20% A -30%</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('blanqueamiento')">Conocer Más</button>
+            </div>
+          </div>
+
+          <!-- Promo 4: Ortodoncia -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card">
+              <div class="promo-icon">😁</div>
+              <h4 class="promo-title">Ortodoncia Accesible</h4>
+              <p class="promo-desc">Meses sin intereses en brackets o alineadores invisibles. Financia tu sonrisa perfecta.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-financing">Sin Intereses</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('ortodoncia')">Consultar</button>
+            </div>
+          </div>
+
+          <!-- Promo 5: Paquete Familiar -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card">
+              <div class="promo-icon">👨‍👩‍👧‍👦</div>
+              <h4 class="promo-title">Paquete Familiar</h4>
+              <p class="promo-desc">Descuento especial si se atienden 2 o más miembros de la familia. Cuida a todos juntos.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-family">Familia</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('familia')">Agendar</button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Promociones Estacionales -->
+      <div class="promo-category">
+        <h3 class="promo-category-title">Promociones de Temporada</h3>
+        <div class="row">
+          <!-- Promo 6: Mes de la Salud Bucal -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card promo-card-seasonal">
+              <div class="promo-seasonal-badge">Febrero</div>
+              <div class="promo-icon">🎁</div>
+              <h4 class="promo-title">Mes de la Salud Bucal</h4>
+              <p class="promo-desc">Kit de higiene dental de regalo: cepillo, pasta y enjuague gratis en tu primera visita.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-gift">Regalo Incluido</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('healthkit')">Reservar</button>
+            </div>
+          </div>
+
+          <!-- Promo 7: San Valentín -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card promo-card-seasonal">
+              <div class="promo-seasonal-badge">Febrero</div>
+              <div class="promo-icon">💝</div>
+              <h4 class="promo-title">Sonríe en San Valentín</h4>
+              <p class="promo-desc">Descuento exclusivo en blanqueamiento dental. Regálate o regala una sonrisa perfecta.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-hot">Oferta Especial</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('sanvalentin')">Agendar</button>
+            </div>
+          </div>
+
+          <!-- Promo 8: Regreso a Clases -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card promo-card-seasonal">
+              <div class="promo-seasonal-badge">Agosto</div>
+              <div class="promo-icon">📚</div>
+              <h4 class="promo-title">Regreso a Clases</h4>
+              <p class="promo-desc">Limpieza dental para niños a precio especial. Prepara a tus hijos con una sonrisa limpia.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-kids">Para Niños</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('backtoschool')">Agendar</button>
+            </div>
+          </div>
+
+          <!-- Promo 9: Fin de Año -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card promo-card-seasonal">
+              <div class="promo-seasonal-badge">Diciembre</div>
+              <div class="promo-icon">🎉</div>
+              <h4 class="promo-title">Fin de Año</h4>
+              <p class="promo-desc">Paquete de revisión + limpieza con descuento especial. Cierra el año con buena salud bucal.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-package">Paquete Especial</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('newyear')">Reservar</button>
+            </div>
+          </div>
+
+          <!-- Promo 10: Revisión Diagnóstico Gratis -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="promo-card promo-card-seasonal">
+              <div class="promo-seasonal-badge">Variado</div>
+              <div class="promo-icon">🔍</div>
+              <h4 class="promo-title">Revisión y Diagnóstico Gratis</h4>
+              <p class="promo-desc">Campaña especial con descuento. Conoce el estado de tu salud bucal sin costo.</p>
+              <div class="promo-tags">
+                <span class="promo-tag promo-tag-new">Campaña Especial</span>
+              </div>
+              <button class="promo-btn" onclick="showPromoDetail('diagnostic')">Consultar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y CONTACTO -->
+  <section class="section-contacto mb-6" id="contacto">
+    <div class="container-contacto">
+      <h2 class="section-title text-center mb-6">Visítanos o Contacta</h2>
+      
+      <div class="row">
+        <!-- Card Contacto -->
+        <div class="col-12 col-md-6 mb-4">
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-card-icon">📇</div>
+              <h3 class="contact-card-title">Información de Contacto</h3>
+            </div>
+            
+            <div class="contact-card-body">
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div class="contact-content">
+                  <p class="contact-label">Ubicación</p>
+                  <p class="contact-value">Condominio Matarrubia 296, Hacienda Cuautitlan, 54803 Cuautitlán, Méx.</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon">⏰</span>
+                <div class="contact-content">
+                  <p class="contact-label">Horarios</p>
+                  <p class="contact-value">Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+                  <p class="contact-value">Sábados: 9:00 AM - 3:00 PM</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon">🚑</span>
+                <div class="contact-content">
+                  <p class="contact-label">Urgencias 24/7</p>
+                  <p class="contact-value">Servicio de emergencia disponible</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-card-actions">
+              <a href="tel:527701828978" class="contact-btn contact-btn-call">
+                <span>📞</span> Llamar
+              </a>
+              <a href="https://wa.me/5217701828978" target="_blank" class="contact-btn contact-btn-whatsapp">
+                <span>💬</span> WhatsApp
+              </a>
+            </div>
+
+            <div class="contact-mascot">
+              <img src="assets/images/caricaturesca_muela.webp" alt="Mascota Dental Quijada">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Ubicación en Maps -->
+        <div class="col-12 col-md-6 mb-4">
+          <div class="map-card">
+            <div class="map-card-header">
+              <div class="map-card-icon">🗺️</div>
+              <h3 class="map-card-title">Ubicación en el Mapa</h3>
+            </div>
+            
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332.05178646051917!2d-99.15618624515437!3d19.68121765812895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d221395f5e4b6f%3A0x109835b04fd9286f!2sDental%20Quijada!5e0!3m2!1ses!2smx!4v1764903623900!5m2!1ses!2smx" 
+                width="100%" 
+                height="100%"
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            
+            <a href="https://maps.app.goo.gl/w7dVsPxks9UhRi8C6" target="_blank" class="btn btn-primary btn-lg w-100 mt-4">
+              Ver Ruta en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="footer-logo">
+            <img src="assets/images/dental_quijada_vf_soi.png" alt="Dental Quijada" width="140">
+          </div>
+          <p class="footer-desc">Clínica de odontología integral en Cuautitlán — tratamientos personalizados para toda la familia.</p>
+        </div>
+
+        <div class="footer-col footer-nav">
+          <h4>Enlaces rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#tratamientos">Tratamientos</a></li>
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <!--
+          <h4>Suscríbete</h4>
+          <p class="footer-desc">Recibe consejos y promociones directamente en tu correo.</p>
+          <form id="footerNewsletter" class="footer-newsletter-form">
+            <input type="email" id="newsletterEmail" class="form-input" placeholder="Tu correo electrónico" required>
+            <button class="btn btn-primary" type="submit">Suscribirme</button>
+          </form> -->
+          <div class="footer-social mt-4">
+            <a href="https://www.facebook.com/dentalquijadaconsultorio" target="_blank" class="social-icon" aria-label="Facebook">
+              <img src="assets/images/facebook_icon.svg" alt="Facebook" width="28" height="28">
+            </a>
+            <a href="https://www.instagram.com/dentalquijada/" target="_blank" class="social-icon" aria-label="Instagram">
+              <svg width="28" height="28" style="background-color: #c22e93; border-radius: 10px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);">
+                <use href="assets/images/logos.svg#instagram"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/5217701828978" target="_blank" class="social-icon" aria-label="WhatsApp">
+              <img src="assets/images/whatsapp_icon.webp" alt="WhatsApp" width="28" height="28">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">© <span id="footerYear">2025</span> Dental Quijada. Todos los derechos reservados.</div>
+        <!-- <div class="footer-bottom-right">
+          <a href="#">Aviso de privacidad</a>
+          <span class="sep">•</span>
+          <a href="#">Términos</a>
+        </div> -->
+      </div>
+    </div>
   </footer>
 
+  <!-- Modal -->
+  <div id="modal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 class="modal-title">Agendar Cita</h2>
+        <p class="modal-subtitle">Completa el formulario para reservar tu cita</p>
+        <button class="modal-close" id="cerrarModal" aria-label="Cerrar modal">&times;</button>
+      </div>
+      
+      <form id="formCita" class="modal-form">
+        <!-- Primera fila: Nombre y Teléfono -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre" class="form-label">Nombre Completo *</label>
+            <input type="text" id="nombre" class="form-input" placeholder="Tu nombre completo" required>
+            <span class="form-error" id="errorNombre"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono" class="form-label">Teléfono *</label>
+            <input type="tel" id="telefono" class="form-input" placeholder="Tu teléfono" required>
+            <span class="form-error" id="errorTelefono"></span>
+          </div>
+        </div>
+        
+        <!-- Segunda fila: Servicio -->
+        <div class="form-group">
+          <label for="servicio" class="form-label">Servicio de interés *</label>
+          <select id="servicio" class="form-input" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="Servicios Básicos">Servicios Básicos</option>
+            <option value="Especialidad">Especialidad (Ortodoncia)</option>
+            <option value="Odontopediatría">Odontopediatría</option>
+            <option value="Rehabilitación">Rehabilitación</option>
+            <option value="Cirugía Oral">Cirugía Oral</option>
+            <option value="Estética Dental">Estética Dental</option>
+          </select>
+          <span class="form-error" id="errorServicio"></span>
+        </div>
+        
+        <!-- Tercera fila: Fecha y Hora -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fecha" class="form-label">Fecha preferida *</label>
+            <input type="date" id="fecha" class="form-input" required>
+            <span class="form-error" id="errorFecha"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="hora" class="form-label">Hora preferida *</label>
+            <input type="time" id="hora" class="form-input" required>
+            <span class="form-error" id="errorHora"></span>
+          </div>
+        </div>
+        
+        <!-- Cuarta fila: Comentarios -->
+        <div class="form-group">
+          <label for="comentarios" class="form-label">Comentarios adicionales</label>
+          <textarea id="comentarios" class="form-input form-textarea" placeholder="Cuéntanos sobre tu caso (opcional)" rows="3"></textarea>
+        </div>
+        
+        <!-- Botones -->
+        <div class="form-actions">
+          <button class="btn btn-primary btn-lg" type="submit">Agendar Cita</button>
+          <button class="btn btn-outline-secondary btn-lg" type="button" id="closeModalBtn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script src="assets/functions/mainfx.js"></script>
+  <script src="assets/functions/wriker.js"></script>
 </body>
 </html>
