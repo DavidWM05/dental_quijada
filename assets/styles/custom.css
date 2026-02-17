@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center;     /* Centra verticalmente */
-  background-image: url('../images/background_iconos.webp');  /* Ruta para pages */
+  background-image: url('/dental_quijada/assets/images/background_iconos.webp');  /* Ruta para pages */
   /* background-image: url('/assets/images/background_iconos.webp'); */ /* Ruta para live server */
   
 }
