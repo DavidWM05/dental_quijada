@@ -9,7 +9,6 @@
   align-items: center;     /* Centra verticalmente */
   background-image: url('/dental_quijada/assets/images/background_iconos.webp');  /* Ruta para pages */
   /* background-image: url('/assets/images/background_iconos.webp'); */ /* Ruta para live server */
-  
 }
 
 .typewriter {

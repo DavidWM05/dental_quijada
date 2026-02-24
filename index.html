@@ -531,6 +531,9 @@
       </div>
       
       <form id="formCita" class="modal-form">
+        <!-- Honeypot: Campo oculto para detectar bots -->
+        <input type="text" id="website" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+        
         <!-- Primera fila: Nombre y Teléfono -->
         <div class="form-row">
           <div class="form-group">
@@ -546,19 +549,27 @@
           </div>
         </div>
         
-        <!-- Segunda fila: Servicio -->
-        <div class="form-group">
-          <label for="servicio" class="form-label">Servicio de interés *</label>
-          <select id="servicio" class="form-input" required>
-            <option value="">Selecciona un servicio</option>
-            <option value="Servicios Básicos">Servicios Básicos</option>
-            <option value="Especialidad">Especialidad (Ortodoncia)</option>
-            <option value="Odontopediatría">Odontopediatría</option>
-            <option value="Rehabilitación">Rehabilitación</option>
-            <option value="Cirugía Oral">Cirugía Oral</option>
-            <option value="Estética Dental">Estética Dental</option>
-          </select>
-          <span class="form-error" id="errorServicio"></span>
+        <!-- Segunda fila: Email y Servicio -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email" class="form-label">Correo Electrónico *</label>
+            <input type="email" id="email" class="form-input" placeholder="tu@email.com" required>
+            <span class="form-error" id="errorEmail"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="servicio" class="form-label">Servicio de interés *</label>
+            <select id="servicio" class="form-input" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="Servicios Básicos">Servicios Básicos</option>
+              <option value="Especialidad">Especialidad (Ortodoncia)</option>
+              <option value="Odontopediatría">Odontopediatría</option>
+              <option value="Rehabilitación">Rehabilitación</option>
+              <option value="Cirugía Oral">Cirugía Oral</option>
+              <option value="Estética Dental">Estética Dental</option>
+            </select>
+            <span class="form-error" id="errorServicio"></span>
+          </div>
         </div>
         
         <!-- Tercera fila: Fecha y Hora -->
@@ -584,7 +595,7 @@
         
         <!-- Botones -->
         <div class="form-actions">
-          <button class="btn btn-primary btn-lg" type="submit">Agendar Cita</button>
+          <button class="btn btn-primary btn-lg" type="submit" id="submitBtn">Agendar Cita</button>
           <button class="btn btn-outline-secondary btn-lg" type="button" id="closeModalBtn">Cancelar</button>
         </div>
       </form>
